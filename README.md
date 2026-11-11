@@ -45,7 +45,6 @@ A kettő együtt adja a teljes képet: a naptár minden bajnokságot lát, a baj
   ([deac.hu/klub/jegyarak](https://deac.hu/klub/jegyarak/)).
 - **Utánpótlás, tornák, női U25, OB IV:** valószínűleg ingyenes, írásos forrás nincs.
 - **Andersen Liga (DEAC JA):** nem tudni.
-- Kérdés: Debreceni Hoki Klub, `info@debrecenihoki.hu`, +36 70 374 1647.
 
 ## Terv: heti frissítés
 
@@ -59,4 +58,3 @@ GitHub Actions (cron, hetente)
 
 - **API-kulcs:** az oldalba ágyazott widget-kulcs (nincs rá felhasználási engedély, bármikor cserélhetik),
   vagy saját kulcs az MJSZ-től. A kulcs repo-secretként megy, nem a kódba.
-- **Belépő:** utánpótlás / Andersen Liga / OB IV — lásd fent.
