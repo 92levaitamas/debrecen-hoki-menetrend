@@ -51,10 +51,9 @@ def to_html(games: list[Game], now: datetime) -> str:
         "<tr>"
         f"<td>{g.day:%Y.%m.%d.} {WEEKDAYS[g.day.weekday()]}</td>"
         f"<td>{g.start.strftime('%H:%M') if g.start else '<em>nincs még</em>'}</td>"
-        f"<td>{html.escape(g.competition)}</td>"
+        f"<td{' class=\"paid\" title=\"fizetős\"' if admission(g) == 'fizetős' else ''}>{html.escape(g.competition)}</td>"
         f"<td>{html.escape(_title(g))}</td>"
         f"<td>{html.escape(g.venue)}</td>"
-        f"<td class=\"{'paid' if admission(g) == 'fizetős' else ''}\">{admission(g)}</td>"
         "</tr>"
         for g in games
     )
@@ -68,14 +67,15 @@ body {{ margin:0; padding:16px; background:var(--bg); color:var(--fg); font:15px
 h1 {{ font-size:1.4rem; margin:0 0 4px; }} p {{ color:var(--muted); margin:0 0 16px; }}
 .wrap {{ overflow-x:auto; }} table {{ border-collapse:collapse; width:100%; min-width:720px; }}
 th, td {{ text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); vertical-align:top; }}
-th {{ background:var(--head); position:sticky; top:0; }} td.paid {{ color:var(--paid); font-weight:600; }}
+th {{ background:var(--head); position:sticky; top:0; }} .paid {{ color:var(--paid); font-weight:600; }}
 a {{ color:inherit; }}
 </style></head><body>
 <h1>Jégkorong Debrecenben</h1>
 <p>{len(games)} közelgő meccs a Debreceni Jégcsarnokban · frissítve: {now:%Y.%m.%d. %H:%M} ·
-<a href="debrecen.ics">naptár-feliratkozás (.ics)</a> · forrás: jegkorongszovetseg.hu</p>
+<a href="debrecen.ics">naptár-feliratkozás (.ics)</a> · forrás: jegkorongszovetseg.hu ·
+<span class="paid">piros</span> = fizetős</p>
 <div class="wrap"><table>
-<thead><tr><th>Dátum</th><th>Idő</th><th>Bajnokság</th><th>Mérkőzés</th><th>Helyszín</th><th>Belépő</th></tr></thead>
+<thead><tr><th>Dátum</th><th>Idő</th><th>Bajnokság</th><th>Mérkőzés</th><th>Helyszín</th></tr></thead>
 <tbody>
 {rows}
 </tbody></table></div>
