@@ -1,60 +1,68 @@
 # Debreceni jégkorongmeccsek — menetrend-gyűjtő
 
-Cél: minden meccs, aminek a **helyszíne Debrecen** (Debreceni Jégcsarnok: `Debrecen, Centerpálya`,
-`Debrecen, 2. pálya`), bármelyik bajnokságból, csak a közelgők. Hetente frissülő, bárhonnan elérhető
-lista, lehetőleg naptár-feliratkozással (`.ics`).
+Minden közelgő meccs, aminek a **helyszíne Debrecen** (Debreceni Jégcsarnok: `Debrecen, Centerpálya`,
+`Debrecen, 2. pálya`), bármelyik bajnokságból. Hetente frissül; a kimenet a `docs/` mappában:
 
-## Adatforrás
+- `docs/index.html` — táblázat (dátum, idő, bajnokság, mérkőzés, helyszín, belépő)
+- `docs/debrecen.ics` — naptár-feliratkozás (Google / Apple / Outlook), UID = meccs-kód + év
+- `docs/games.json` — ugyanez gépi formában
 
-A jegkorongszovetseg.hu oldalai Vue web componentekkel (`<mjsz-vbr-*>`, shadow DOM) töltik az adatot az
-`https://api.icehockey.hu/vbr` API-ból. A hívás `X-API-KEY` headert kér.
+## Működés
 
-| Endpoint | Paraméterek | Mire jó |
+```
+GitHub Actions (.github/workflows/update.yml, hétfő 05:00 UTC + kézi indítás)
+  → scraper/main.py
+      → scraper/collect.py: headless Chromium (Playwright) megnyitja a nyilvános oldalakat,
+        és lefuttatja rajtuk a js/ scripteket
+      → szűrés: helyszín tartalmazza „Debrecen”, dátum ≥ ma
+      → scraper/render.py: HTML + iCalendar + JSON
+  → commit a docs/ mappába
+```
+
+| Forrás | Script | Mit ad |
 |---|---|---|
-| `/v2/championship-seasons` | `championshipName` (pl. `U-14 Bajnokság`) | szezonok és bajnokság-id |
-| `/v2/championship-phases` | `championshipId` | szakaszok (Alapszakasz-A1, Osztályozó, Középszakasz …) |
-| `/v2/games-list` | `championshipId`, `division`, `phaseId` | egy szakasz teljes menetrendje |
-| `/v2/public-calendar` | `seasonId` (2026-27: `251`) | összesített naptár, minden bajnokság, kb. 3 hét előre |
-| `/v2/calendar` | — | tornás bajnokságok (U8, U10) |
+| `/versenynaptar` | `js/calendar.js` | minden bajnokság (felnőtt, női, 3x3, utánpótlás), kb. 3 hétre előre |
+| `/u21`, `/u19`, `/u16`, `/u14`, `/u12` `/bajnoksag` | `js/championship.js` | a teljes szezon, minden divízió és szakasz |
+| `/u10/menetrend`, `/u8/menetrend` | `js/cup.js` | tornák (csak rendező, a résztvevők a sorsolásban vannak) |
 
-A widget-csomagok: `@mjsz-vbr-elements/core`, `elements`, `extended`, `liga`, `gamecenter` (unpkg).
-A válasz-JSON szerkezetét még nem néztük meg.
+Ugyanaz a meccs-kód több forrásból is jöhet; a naptár sora nyer.
 
-## Oldalak (2026-27)
+## Futtatás helyben
 
-- Bajnokság-widget (`mjsz-vbr-championship`): `/u21/bajnoksag`, `/u19/bajnoksag`, `/u16/bajnoksag`,
-  `/u14/bajnoksag`, `/u12/bajnoksag`, `/u18/3x3/bajnoksag`, `/u16/3x3-bajnoksag`, `/u14/3x3-bajnoksag`,
-  `/u12/3x3-bajnoksag`, `/ob-i-bajnoksag`, `/noi/u25` stb. A divízió fülek (`button[role=tab]`) és a
-  `#season` / `#phases` select a shadow DOM-ban vannak.
-- Torna-widget (`mjsz-vbr-schedule-cup`): `/u10/menetrend` (MINI A/B/C), `/u8/menetrend` (SZUPERMINI A/B/C).
-  Itt nincs vendégcsapat, csak „Rendező”; a résztvevők a sorsolás-PDF-ben vannak.
-- Összesített naptár (`mjsz-vbr-calendar`): `/versenynaptar` → „KÖVETKEZŐ MÉRKŐZÉSEK” + „Még több”.
+```
+python -m venv .venv
+.venv\Scripts\python -m pip install -r requirements.txt
+.venv\Scripts\python -m playwright install chromium
+.venv\Scripts\python scraper\main.py
+```
 
-## Ami működik most
+A `js/` scriptek Chrome DevTools Console-ban is futnak: bemásolás után `()`-val kell meghívni őket.
 
-`browser/` — DevTools Console-ban futtatható scriptek, böngészőből:
+## Az oldal szerkezete
 
-- `championship-scraper.js` — egy bajnoksági oldal összes divíziója × szakasza, teljes szezon.
-- `calendar-scraper.js` — az összesített naptár, minden bajnokság, de csak kb. 3 hétre előre.
+A jegkorongszovetseg.hu Vue web componentekkel (`<mjsz-vbr-*>`, shadow DOM) tölti az adatot az
+`https://api.icehockey.hu/vbr` API-ból. Az oldalba ágyazott API-kulcs domainhez kötött (más helyről
+403 `No permission is specified for the domain or ip address used`), ezért scriptből közvetlenül nem
+használható — ezért fut headless böngésző.
 
-A kettő együtt adja a teljes képet: a naptár minden bajnokságot lát, a bajnoksági oldal a teljes szezont.
+| Endpoint | Paraméterek |
+|---|---|
+| `/v2/championship-seasons` | `championshipName` |
+| `/v2/championship-sections`, `/v2/championship-phases` | `championshipId` |
+| `/v2/games-list` | `championshipId`, `division`, `phaseId` |
+| `/v2/public-calendar` | `seasonId` (2026-27: `251`) |
 
-## Belépő
+Ha saját API-kulcs lesz az MJSZ-től, a `scraper/collect.py` cserélhető, a kimenet marad.
+
+## Belépő (szabály a `render.admission`-ben)
 
 - **Erste Liga (DEAC):** fizetős — 2025/26: felnőtt 2 500 Ft, diák/nyugdíjas 2 000 Ft, playoff 3 500 / 2 500 Ft
   ([deac.hu/klub/jegyarak](https://deac.hu/klub/jegyarak/)).
-- **Utánpótlás, tornák, női U25, OB IV:** valószínűleg ingyenes, írásos forrás nincs.
 - **Andersen Liga (DEAC JA):** nem tudni.
+- **Minden más (utánpótlás, tornák, női U25, OB IV):** valószínűleg ingyenes, írásos forrás nincs.
 
-## Terv: heti frissítés
+## Ismert korlátok
 
-```
-GitHub Actions (cron, hetente)
-  → Python-script: api.icehockey.hu/vbr/v2 — minden bajnokság menetrendje, szűrés helyszín = Debrecen
-  → GitHub Pages: debrecen.html + debrecen.ics (naptár-feliratkozás, UID = meccs-id)
-```
-
-## Nyitott kérdések
-
-- **API-kulcs:** az oldalba ágyazott widget-kulcs (nincs rá felhasználási engedély, bármikor cserélhetik),
-  vagy saját kulcs az MJSZ-től. A kulcs repo-secretként megy, nem a kódba.
+- A naptár „Következő mérkőzések” nézete a futás napjának meccseit nem tartalmazza.
+- A felnőtt, női és 3x3-as bajnokságok csak kb. 3 hétre előre látszanak (a naptár ablaka).
+- A 00:00-s kezdés = még nincs rögzítve; ezek egész napos eseményként mennek a naptárba.

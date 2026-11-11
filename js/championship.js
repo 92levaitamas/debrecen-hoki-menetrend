@@ -1,10 +1,11 @@
-// Futtatás: Chrome DevTools Console-ban egy bajnoksági oldalon,
-// pl. https://www.jegkorongszovetseg.hu/u14/bajnoksag
-// Végigjárja az összes divízió-fület (U-14 A/B/C) és az összes szakaszt,
-// és kiírja a debreceni helyszínű meccseket. Az aktuális szezon az alapértelmezett.
-(async () => {
+// Bajnoksági oldal (pl. /u14/bajnoksag): az aktuális szezon összes divíziója és szakasza.
+// Playwright page.evaluate-tel fut; kézzel a DevTools Console-ban: bemásolás után `()`-val hívd meg.
+async () => {
   const sleep = ms => new Promise(r => setTimeout(r, ms));
-  for (let i = 0; i < 60 && !document.querySelector('mjsz-vbr-championship')?.shadowRoot?.querySelector('table'); i++) await sleep(250);
+  // Betöltés közben a szakasz-választóban csak egy „Nincsenek szakaszok” helykitöltő van.
+  const phasesLoaded = () => [...(document.querySelector('mjsz-vbr-championship')?.shadowRoot?.querySelectorAll('#phases option') || [])]
+    .some(o => o.text.trim() !== 'Nincsenek szakaszok');
+  for (let i = 0; i < 120 && !phasesLoaded(); i++) await sleep(250);
   const el = document.querySelector('mjsz-vbr-championship');
   const root = el.shadowRoot || el;
 
@@ -23,6 +24,8 @@
     }
   };
 
+  await waitForReload('none'); // az első szakasz táblázata a szakasz-lista után érkezik
+
   const games = [];
   const tabNames = [...root.querySelectorAll('button[role=tab]')].map(b => b.textContent.trim()).filter(t => /^U/.test(t));
   for (const tab of tabNames.length ? tabNames : ['']) {
@@ -40,15 +43,16 @@
         select.dispatchEvent(new Event('change', { bubbles: true }));
         await waitForReload(before);
       }
+      console.log(`${tab} / ${phaseName}: ${root.querySelectorAll('table tbody tr').length} sor`);
       for (const tr of root.querySelectorAll('table tbody tr')) {
-        const c = [...tr.querySelectorAll('td')].map(td => td.textContent.trim().replace(/\s+/g, ' '));
-        // oszlopok: 0 #, 1 dátum, 2 idő, 3 hazai, 5 eredmény, 9 vendég, 10 helyszín
+        // a csapat-cellában hosszú és rövid név is van (`UTE A` + `UTE`), csak a hosszú kell
+        const c = [...tr.querySelectorAll('td')].map(td => (td.querySelector('.is-team-name-long') || td).textContent.trim().replace(/\s+/g, ' '));
+        // oszlopok: 0 kód, 1 dátum, 2 idő, 3 hazai, 9 vendég, 10 helyszín
         if (/Debrecen/i.test(c[10] || '')) {
-          games.push({ division: tab, phase: phaseName, date: c[1], time: c[2], home: c[3], away: c[9], venue: c[10] });
+          games.push({ code: c[0], competition: [tab, phaseName].filter(Boolean).join(' – '), date: c[1], time: c[2], home: c[3], away: c[9], venue: c[10] });
         }
       }
     }
   }
-  console.table(games);
   return games;
-})();
+}

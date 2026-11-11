@@ -1,0 +1,204 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//debrecen-hoki-menetrend//HU
+CALSCALE:GREGORIAN
+X-WR-CALNAME:Jégkorong Debrecenben
+X-WR-TIMEZONE:Europe/Budapest
+BEGIN:VEVENT
+UID:EL-69-2026@debrecen-hoki-menetrend
+DTSTAMP:20261111T124714Z
+DTSTART:20261113T173000Z
+DTEND:20261113T200000Z
+SUMMARY:DEAC – Dunaújvárosi Acélbikák
+LOCATION:Debrecen\, Centerpálya
+DESCRIPTION:Erste Liga – Alapszakasz\nBelépő: fizetős
+END:VEVENT
+BEGIN:VEVENT
+UID:MINI-20-2026@debrecen-hoki-menetrend
+DTSTAMP:20261111T124714Z
+DTSTART:20261114T110000Z
+DTEND:20261114T133000Z
+SUMMARY:Debreceni Hoki Klub (torna)
+LOCATION:Debrecen\, Centerpálya
+DESCRIPTION:Mini Bajnokság – Mini A – Alapszakasz\nBelépő: valósz
+ ínűleg ingyenes
+END:VEVENT
+BEGIN:VEVENT
+UID:U19-65-2026@debrecen-hoki-menetrend
+DTSTAMP:20261111T124714Z
+DTSTART:20261114T112500Z
+DTEND:20261114T135500Z
+SUMMARY:DEAC JA – Szombathelyi Pingvinek
+LOCATION:Debrecen\, 2. pálya
+DESCRIPTION:U-19 Bajnokság – U-19 A – Alapszakasz\nBelépő: valósz
+ ínűleg ingyenes
+END:VEVENT
+BEGIN:VEVENT
+UID:AL-24-2026@debrecen-hoki-menetrend
+DTSTAMP:20261111T124714Z
+DTSTART:20261114T140000Z
+DTEND:20261114T163000Z
+SUMMARY:DEAC JA – Bajai Harcsák ASP
+LOCATION:Debrecen\, Centerpálya
+DESCRIPTION:Andersen Liga – Alapszakasz\nBelépő: nem tudni
+END:VEVENT
+BEGIN:VEVENT
+UID:U16-172-2026@debrecen-hoki-menetrend
+DTSTAMP:20261111T124714Z
+DTSTART:20261114T141500Z
+DTEND:20261114T164500Z
+SUMMARY:DEAC JA – UTE
+LOCATION:Debrecen\, 2. pálya
+DESCRIPTION:U-16 Bajnokság – U-16 A – Alapszakasz\nBelépő: valósz
+ ínűleg ingyenes
+END:VEVENT
+BEGIN:VEVENT
+UID:SZMINI-47-2026@debrecen-hoki-menetrend
+DTSTAMP:20261111T124714Z
+DTSTART:20261115T110000Z
+DTEND:20261115T133000Z
+SUMMARY:Debreceni Hoki Klub (torna)
+LOCATION:Debrecen\, Centerpálya
+DESCRIPTION:Szupermini Bajnokság – Szupermini B – Alapszakasz\nBelép
+ ő: valószínűleg ingyenes
+END:VEVENT
+BEGIN:VEVENT
+UID:U14-197-2026@debrecen-hoki-menetrend
+DTSTAMP:20261111T124714Z
+DTSTART:20261115T112000Z
+DTEND:20261115T135000Z
+SUMMARY:Debreceni Hoki Klub – Tisza Volán SC
+LOCATION:Debrecen\, 2. pálya
+DESCRIPTION:U-14 Bajnokság – U-14 A – Alapszakasz\nBelépő: valósz
+ ínűleg ingyenes
+END:VEVENT
+BEGIN:VEVENT
+UID:MINI-80-2026@debrecen-hoki-menetrend
+DTSTAMP:20261111T124714Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:Debreceni Hoki Klub (torna)
+LOCATION:Debrecen\, Centerpálya
+DESCRIPTION:Mini Bajnokság – Mini B – Alapszakasz\nBelépő: valósz
+ ínűleg ingyenes\nKezdési idő még nincs.
+END:VEVENT
+BEGIN:VEVENT
+UID:OBIVD-43-2026@debrecen-hoki-menetrend
+DTSTAMP:20261111T124714Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:DJK SE – Korongozoo VALOR
+LOCATION:Debrecen\, Centerpálya
+DESCRIPTION:OB IV/D Bajnokság – Alapszakasz\nBelépő: valószínűleg 
+ ingyenes\nKezdési idő még nincs.
+END:VEVENT
+BEGIN:VEVENT
+UID:SZMINI-18-2026@debrecen-hoki-menetrend
+DTSTAMP:20261111T124714Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:Debreceni Hoki Klub (torna)
+LOCATION:Debrecen\, Centerpálya
+DESCRIPTION:Szupermini Bajnokság – Szupermini A – Alapszakasz\nBelép
+ ő: valószínűleg ingyenes\nKezdési idő még nincs.
+END:VEVENT
+BEGIN:VEVENT
+UID:U12-218-2026@debrecen-hoki-menetrend
+DTSTAMP:20261111T124714Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:Debreceni Hoki Klub – Sportországi Cápák
+LOCATION:Debrecen\, 2. pálya
+DESCRIPTION:U-12 Bajnokság – U-12 A – Mérkőzés\nBelépő: valósz
+ ínűleg ingyenes\nKezdési idő még nincs.
+END:VEVENT
+BEGIN:VEVENT
+UID:EL-84-2026@debrecen-hoki-menetrend
+DTSTAMP:20261111T124714Z
+DTSTART:20261122T173000Z
+DTEND:20261122T200000Z
+SUMMARY:DEAC – DVTK Jegesmedvék
+LOCATION:Debrecen\, Centerpálya
+DESCRIPTION:Erste Liga – Alapszakasz\nBelépő: fizetős
+END:VEVENT
+BEGIN:VEVENT
+UID:MINI-153-2026@debrecen-hoki-menetrend
+DTSTAMP:20261111T124714Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:Debreceni Hoki Klub (torna)
+LOCATION:Debrecen\, Centerpálya
+DESCRIPTION:Mini Bajnokság – Mini C – Alapszakasz\nBelépő: valósz
+ ínűleg ingyenes\nKezdési idő még nincs.
+END:VEVENT
+BEGIN:VEVENT
+UID:U12-223-2026@debrecen-hoki-menetrend
+DTSTAMP:20261111T124714Z
+DTSTART;VALUE=DATE:20261206
+DTEND;VALUE=DATE:20261207
+SUMMARY:Debreceni Hoki Klub – HKB Vikings
+LOCATION:Debrecen\, 2. pálya
+DESCRIPTION:U-12 A – Mérkőzés-2. forduló-Kelet\nBelépő: valószín
+ űleg ingyenes\nKezdési idő még nincs.
+END:VEVENT
+BEGIN:VEVENT
+UID:MINI-39-2027@debrecen-hoki-menetrend
+DTSTAMP:20261111T124714Z
+DTSTART;VALUE=DATE:20270206
+DTEND;VALUE=DATE:20270207
+SUMMARY:Debreceni Hoki Klub (torna)
+LOCATION:Debrecen\, Centerpálya
+DESCRIPTION:MINI A – Alapszakasz\nBelépő: valószínűleg ingyenes\nKe
+ zdési idő még nincs.
+END:VEVENT
+BEGIN:VEVENT
+UID:SZMINI-24-2027@debrecen-hoki-menetrend
+DTSTAMP:20261111T124714Z
+DTSTART;VALUE=DATE:20270214
+DTEND;VALUE=DATE:20270215
+SUMMARY:Debreceni Hoki Klub (torna)
+LOCATION:Debrecen\, Centerpálya
+DESCRIPTION:SZUPERMINI A – Alapszakasz\nBelépő: valószínűleg ingyen
+ es\nKezdési idő még nincs.
+END:VEVENT
+BEGIN:VEVENT
+UID:MINI-105-2027@debrecen-hoki-menetrend
+DTSTAMP:20261111T124714Z
+DTSTART;VALUE=DATE:20270306
+DTEND;VALUE=DATE:20270307
+SUMMARY:Debreceni Hoki Klub (torna)
+LOCATION:Debrecen\, Centerpálya
+DESCRIPTION:MINI C – Alapszakasz\nBelépő: valószínűleg ingyenes\nKe
+ zdési idő még nincs.
+END:VEVENT
+BEGIN:VEVENT
+UID:MINI-53-2027@debrecen-hoki-menetrend
+DTSTAMP:20261111T124714Z
+DTSTART;VALUE=DATE:20270306
+DTEND;VALUE=DATE:20270307
+SUMMARY:Debreceni Hoki Klub (torna)
+LOCATION:Debrecen\, Centerpálya
+DESCRIPTION:MINI A – Alapszakasz\nBelépő: valószínűleg ingyenes\nKe
+ zdési idő még nincs.
+END:VEVENT
+BEGIN:VEVENT
+UID:SZMINI-79-2027@debrecen-hoki-menetrend
+DTSTAMP:20261111T124714Z
+DTSTART;VALUE=DATE:20270307
+DTEND;VALUE=DATE:20270308
+SUMMARY:Debreceni Hoki Klub (torna)
+LOCATION:Debrecen\, Centerpálya
+DESCRIPTION:SZUPERMINI C – Alapszakasz\nBelépő: valószínűleg ingyen
+ es\nKezdési idő még nincs.
+END:VEVENT
+BEGIN:VEVENT
+UID:MINI-104-2027@debrecen-hoki-menetrend
+DTSTAMP:20261111T124714Z
+DTSTART;VALUE=DATE:20270313
+DTEND;VALUE=DATE:20270314
+SUMMARY:DSC-SI (torna)
+LOCATION:Debrecen\, Centerpálya
+DESCRIPTION:MINI C – Alapszakasz\nBelépő: valószínűleg ingyenes\nKe
+ zdési idő még nincs.
+END:VEVENT
+END:VCALENDAR
