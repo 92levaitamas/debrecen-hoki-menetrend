@@ -1,102 +1,22 @@
 [
   {
-    "code": "U14 217",
-    "competition": "U-14 Bajnokság – U-14 A – Középszakasz",
-    "day": "2026-11-21",
-    "start": null,
-    "home": "Debreceni Hoki Klub",
-    "away": "UTE A",
-    "venue": "Debrecen, 2. pálya",
-    "admission": "valószínűleg ingyenes"
-  },
-  {
-    "code": "U16 190",
-    "competition": "U-16 Bajnokság – U-16 A – Középszakasz",
-    "day": "2026-11-21",
-    "start": null,
-    "home": "DEAC JA",
-    "away": "Budapest Jégkorong Akadémia",
-    "venue": "Debrecen, 2. pálya",
-    "admission": "valószínűleg ingyenes"
-  },
-  {
-    "code": "MINI 80",
-    "competition": "Mini Bajnokság – Mini B – Alapszakasz",
-    "day": "2026-11-21",
-    "start": "2026-11-21 12:00:00",
-    "home": "Debreceni Hoki Klub",
-    "away": "Torna",
-    "venue": "Debrecen, Centerpálya",
-    "admission": "valószínűleg ingyenes"
-  },
-  {
-    "code": "OBIVD 43",
-    "competition": "OB IV/D Bajnokság – Alapszakasz",
-    "day": "2026-11-21",
-    "start": "2026-11-21 21:05:00",
-    "home": "DJK SE",
-    "away": "Korongozoo VALOR",
-    "venue": "Debrecen, Centerpálya",
-    "admission": "valószínűleg ingyenes"
-  },
-  {
-    "code": "U12 218",
-    "competition": "U-12 Bajnokság – U-12 A – Mérkőzés",
-    "day": "2026-11-22",
-    "start": "2026-11-22 11:35:00",
-    "home": "Debreceni Hoki Klub",
-    "away": "Sportországi Cápák",
-    "venue": "Debrecen, 2. pálya",
-    "admission": "valószínűleg ingyenes"
-  },
-  {
-    "code": "SZMINI 18",
-    "competition": "Szupermini Bajnokság – Szupermini A – Alapszakasz",
-    "day": "2026-11-22",
-    "start": "2026-11-22 12:00:00",
-    "home": "Debreceni Hoki Klub",
-    "away": "Torna",
-    "venue": "Debrecen, Centerpálya",
-    "admission": "valószínűleg ingyenes"
-  },
-  {
-    "code": "EL 84",
-    "competition": "Erste Liga – Alapszakasz",
-    "day": "2026-11-22",
-    "start": "2026-11-22 18:30:00",
-    "home": "DEAC",
-    "away": "DVTK Jegesmedvék",
-    "venue": "Debrecen, Centerpálya",
-    "admission": "fizetős"
-  },
-  {
     "code": "U16 207",
     "competition": "U-16 Bajnokság – U-16 A – Középszakasz",
     "day": "2026-11-24",
-    "start": null,
+    "start": "2026-11-24 17:25:00",
     "home": "Székelyföldi Jégkorong Akadémia",
     "away": "DEAC JA",
-    "venue": "Debrecen, Centerpálya",
+    "venue": "Debrecen, 2. pálya",
     "admission": "valószínűleg ingyenes"
   },
   {
     "code": "MINI 153",
     "competition": "Mini Bajnokság – Mini C – Alapszakasz",
     "day": "2026-11-28",
-    "start": null,
+    "start": "2026-11-28 12:00:00",
     "home": "Debreceni Hoki Klub",
     "away": "Torna",
     "venue": "Debrecen, Centerpálya",
-    "admission": "valószínűleg ingyenes"
-  },
-  {
-    "code": "U14 223",
-    "competition": "U-14 Bajnokság – U-14 A – Középszakasz",
-    "day": "2026-11-28",
-    "start": null,
-    "home": "Debreceni Hoki Klub",
-    "away": "UNI GYŐR ETO HC",
-    "venue": "Debrecen, 2. pálya",
     "admission": "valószínűleg ingyenes"
   },
   {
@@ -106,6 +26,16 @@
     "start": null,
     "home": "DEAC JA",
     "away": "Újpesti Jégkorong Akadémia",
+    "venue": "Debrecen, 2. pálya",
+    "admission": "valószínűleg ingyenes"
+  },
+  {
+    "code": "U19 118",
+    "competition": "U-19 Bajnokság – U-19 B – Középszakasz",
+    "day": "2026-11-29",
+    "start": "2026-11-29 14:45:00",
+    "home": "DEAC JA",
+    "away": "HKB",
     "venue": "Debrecen, 2. pálya",
     "admission": "valószínűleg ingyenes"
   },
@@ -127,6 +57,16 @@
     "home": "Debreceni Hoki Klub",
     "away": "HKB Vikings",
     "venue": "Debrecen, 2. pálya",
+    "admission": "valószínűleg ingyenes"
+  },
+  {
+    "code": "U19 123",
+    "competition": "U-19 B – Középszakasz-B1",
+    "day": "2026-12-13",
+    "start": null,
+    "home": "DEAC JA",
+    "away": "Egerszegi Titánok",
+    "venue": "Debrecen, Centerpálya",
     "admission": "valószínűleg ingyenes"
   },
   {
@@ -170,6 +110,16 @@
     "admission": "valószínűleg ingyenes"
   },
   {
+    "code": "U14 223",
+    "competition": "U-14 A – Középszakasz-A1",
+    "day": "2027-01-10",
+    "start": null,
+    "home": "Debreceni Hoki Klub",
+    "away": "UNI GYŐR ETO HC",
+    "venue": "Debrecen, 2. pálya",
+    "admission": "valószínűleg ingyenes"
+  },
+  {
     "code": "U16 221",
     "competition": "U-16 A – Középszakasz-A1",
     "day": "2027-01-10",
@@ -190,6 +140,16 @@
     "admission": "valószínűleg ingyenes"
   },
   {
+    "code": "U19 131",
+    "competition": "U-19 B – Középszakasz-B1",
+    "day": "2027-01-23",
+    "start": null,
+    "home": "DEAC JA",
+    "away": "Acélbikák Angels",
+    "venue": "Debrecen, Centerpálya",
+    "admission": "valószínűleg ingyenes"
+  },
+  {
     "code": "U14 260",
     "competition": "U-14 A – Középszakasz-A1",
     "day": "2027-01-30",
@@ -202,7 +162,7 @@
   {
     "code": "U16 231",
     "competition": "U-16 A – Középszakasz-A1",
-    "day": "2027-01-30",
+    "day": "2027-01-31",
     "start": null,
     "home": "DEAC JA",
     "away": "Gyergyói Hoki Klub",
@@ -226,6 +186,16 @@
     "start": null,
     "home": "Debreceni Hoki Klub",
     "away": "Torna",
+    "venue": "Debrecen, Centerpálya",
+    "admission": "valószínűleg ingyenes"
+  },
+  {
+    "code": "U19 134",
+    "competition": "U-19 B – Középszakasz-B1",
+    "day": "2027-02-06",
+    "start": null,
+    "home": "DEAC JA",
+    "away": "Sportországi Cápák",
     "venue": "Debrecen, Centerpálya",
     "admission": "valószínűleg ingyenes"
   },
